@@ -1,5 +1,0 @@
-#Temporary properties file
-#Mon Jul 14 23:38:34 CEST 2014
-hibernate.connection.username=root
-hibernate.connection.password=s3S3anqjg1V8F5hhyCvgAhlNVdr7jFiO
-hibernate.connection.url=jdbc\:mysql\://localhost\:3306/tasks_test??useUnicode\=true&characterEncoding\=UTF-8
