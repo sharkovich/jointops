@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-07-10 05:36:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ib.jointops.hibernate.domain.Users" table="USERS">
+        <id name="id" type="java.lang.Long">
+            <column name="USER_ID" />
+            <generator class="native" />
+        </id>
+        <set name="tasks" table="USER_TASKS" inverse="false" lazy="true">
+            <key>
+                <column name="USER_ID" />
+            </key>
+			<many-to-many column="TASK_ID" class="ib.jointops.hibernate.domain.Task"/>
+        </set>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

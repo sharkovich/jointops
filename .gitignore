@@ -1,0 +1,15 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+
+#ignore everything under the 'bin' folder
+bin/
+#ignore everything under any CVS folders
+CVS/
+#ignore the eclipse configuration files
+.classpath
+.project
+jointops.properities
+
