@@ -13,7 +13,10 @@ import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.ILabelDecorator;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
@@ -40,13 +43,24 @@ public class TaskView extends Composite {
 		
 		ToolBar toolBar = new ToolBar(this, SWT.FLAT | SWT.RIGHT);
 		toolBar.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-		
 		ToolItem tltmNewTask = new ToolItem(toolBar, SWT.NONE);
 		tltmNewTask.setText("Add new task");
 		
 		treeViewer.setContentProvider(new TaskTreeContentProvider());
 		treeViewer.setLabelProvider(new TaskTreeLabelProvider());
 		treeViewer.setInput("aa");	
+		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent arg0) {
+				IStructuredSelection selection = (IStructuredSelection)arg0.getSelection();
+				
+				if (selection.getFirstElement() instanceof Categories) {
+					System.out.println(selection.getFirstElement().toString());
+				}
+				
+			}
+		});
 		
 
 		Tree tree = treeViewer.getTree();
@@ -58,10 +72,6 @@ public class TaskView extends Composite {
 	protected void checkSubclass() {
 		// Disable the check that prevents subclassing of SWT components
 	}
-	protected void updateView() {
-		List categories = DbQueries.listCategories();
-	}
-
 }
 class TaskTreeContentProvider implements ITreeContentProvider {
 

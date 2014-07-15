@@ -1,4 +1,6 @@
-jointops
+JointOps - WIP
 ========
 
-Team task management 
+Simple team task management application.
+
+

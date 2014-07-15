@@ -171,7 +171,7 @@ public class UserView extends Composite {
 
 				try {
 					selectedUser =  (Users) selection.getFirstElement();
-					System.out.println("Selected user: \n\tname:" + selectedUser.getName() + "\n\tid: " + selectedUser.getId());
+					//System.out.println("Selected user: \n\tname:" + selectedUser.getName() + "\n\tid: " + selectedUser.getId());
 					text.setText(selectedUser.getName());
 				} catch (NullPointerException e) {
 					text.setText("");
