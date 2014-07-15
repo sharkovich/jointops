@@ -3,6 +3,7 @@ pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.next
 release.properties
+<<<<<<< HEAD
 
 #ignore everything under the 'bin' folder
 bin/
@@ -13,3 +14,5 @@ CVS/
 .project
 jointops.properities
 
+=======
+>>>>>>> 9cf5e426605a24862d2bfdd0b60fbab718ea09e4
